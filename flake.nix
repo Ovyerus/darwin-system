@@ -9,13 +9,13 @@
 
   outputs = inputs@{ self, nix-darwin, nixpkgs }:
   {
-    # Build darwin flake using:
-    # $ darwin-rebuild build --flake .#shimmer
     darwinConfigurations."shimmer" = nix-darwin.lib.darwinSystem {
       specialArgs = { inherit inputs; };
       modules = [
-        ./modules/system.nix
+        ./modules/homebrew.nix
         ./modules/programs.nix
+        ./modules/services.nix
+        ./modules/system.nix
       ];
     };
 
