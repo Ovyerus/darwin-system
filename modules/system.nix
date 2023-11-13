@@ -44,19 +44,19 @@
   fonts.fontDir.enable = true;
   fonts.fonts = with pkgs; [
     inter
-    (iosevka.override {
-      set = "custom";
-      privateBuildPlan = import ../fonts/iosevka.nix {
-        family = "Iosevka Custom";
-        spacing = "normal";
-      };
-    })
-    (iosevka.override {
-      set = "term";
-      privateBuildPlan = import ../fonts/iosevka.nix {
-        family = "Iosevka Term";
-        spacing = "term";
-      };
-    })
+    # (iosevka.override {
+    #   set = "custom";
+    #   privateBuildPlan = import ../fonts/iosevka.nix {
+    #     family = "Iosevka Custom";
+    #     spacing = "normal";
+    #   };
+    # })
+    # (iosevka.override {
+    #   set = "term";
+    #   privateBuildPlan = import ../fonts/iosevka.nix {
+    #     family = "Iosevka Term";
+    #     spacing = "term";
+    #   };
+    # })
   ];
 }
