@@ -30,6 +30,33 @@
   # $ darwin-rebuild changelog
   system.stateVersion = 4;
 
-  programs.zsh.enable = true;
-  # programs.fish.enable = true;
+  # Dock settings
+  system.defaults.dock = {
+    autohide = false;
+    magnification = false;
+    minimize-to-application = false;
+    mru-spaces = false;
+    orientation = "bottom";
+    show-recents = false;
+    tilesize = 48;
+  };
+
+  fonts.fontDir.enable = true;
+  fonts.fonts = with pkgs; [
+    inter
+    (iosevka.override {
+      set = "custom";
+      privateBuildPlan = import ../fonts/iosevka.nix {
+        family = "Iosevka Custom";
+        spacing = "normal";
+      };
+    })
+    (iosevka.override {
+      set = "term";
+      privateBuildPlan = import ../fonts/iosevka.nix {
+        family = "Iosevka Term";
+        spacing = "term";
+      };
+    })
+  ];
 }
