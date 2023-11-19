@@ -1,5 +1,7 @@
-{ family, spacing }:
 {
+  family,
+  spacing,
+}: {
   family = family;
   spacing = spacing;
   serifs = "sans";
@@ -15,7 +17,6 @@
       menu = "upright";
       css = "normal";
     };
-
 
     italic = {
       angle = 9.4;

@@ -7,10 +7,13 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs }:
-  {
+  outputs = {
+    self,
+    nix-darwin,
+    nixpkgs,
+  } @ inputs: {
     darwinConfigurations."shimmer" = nix-darwin.lib.darwinSystem {
-      specialArgs = { inherit inputs; };
+      specialArgs = {inherit inputs;};
       modules = [
         ./modules/homebrew.nix
         ./modules/programs.nix

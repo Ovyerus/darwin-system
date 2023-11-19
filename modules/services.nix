@@ -1,30 +1,34 @@
-{ inputs, lib, pkgs, ... }:
 {
+  inputs,
+  lib,
+  pkgs,
+  ...
+}: {
   services.tailscale.enable = true;
 
   services.yabai = {
     enable = true;
-    config =
-      let
-        gap = 10;
-        gapKeys = [
-          "window_gap"
-          "top_padding"
-          "bottom_padding"
-          "left_padding"
-          "right_padding"
-        ];
+    config = let
+      gap = 10;
+      gapKeys = [
+        "window_gap"
+        "top_padding"
+        "bottom_padding"
+        "left_padding"
+        "right_padding"
+      ];
 
-        gaps = builtins.listToAttrs (
-          builtins.map (k: lib.attrsets.nameValuePair k gap) gapKeys
-        );
-      in
+      gaps = builtins.listToAttrs (
+        builtins.map (k: lib.attrsets.nameValuePair k gap) gapKeys
+      );
+    in
       {
         layout = "bsp";
         window_placement = "second_child";
         # TODO: decide on bar (make own bottom one???).
         # external_bar = "all:45:0";
-      } // gaps;
+      }
+      // gaps;
     extraConfig = ''
       yabai -m rule --add app="Bitwarden"               manage=off
       yabai -m rule --add app="Discord"                 manage=off
