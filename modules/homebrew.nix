@@ -1,5 +1,4 @@
-{ pkgs, ...}:
-{
+{pkgs, ...}: {
   homebrew.enable = true;
 
   homebrew.taps = [
@@ -17,6 +16,7 @@
     "iterm2"
     "karabiner-elements"
     "maccy"
+    "orbstack"
     "visual-studio-code"
   ];
 

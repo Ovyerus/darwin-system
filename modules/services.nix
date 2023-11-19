@@ -40,6 +40,7 @@
       yabai -m rule --add title="^Weather$"             manage=off
       yabai -m rule --add title="Yubico Authenticator"  manage=off
       yabai -m rule --add title="Rewind"                manage=off
+      yabai -m rule --add title="eqMac"                manage=off
     '';
   };
 
