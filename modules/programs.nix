@@ -10,6 +10,7 @@
     iterm2
     nixd
     openssh
+    prettierd
     wget
   ];
 

@@ -3,17 +3,26 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    nix-darwin.url = "github:LnL7/nix-darwin";
-    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+
+    nix-darwin = {
+      url = "github:LnL7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    iosevka-solai = {
+      url = "github:Ovyerus/iosevka-solai";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
     self,
     nix-darwin,
     nixpkgs,
+    ...
   } @ inputs: {
     darwinConfigurations."shimmer" = nix-darwin.lib.darwinSystem {
-      specialArgs = {inherit inputs;};
+      specialArgs = inputs;
       modules = [
         ./modules/homebrew.nix
         ./modules/programs.nix

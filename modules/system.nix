@@ -1,5 +1,6 @@
 {
-  inputs,
+  self,
+  iosevka-solai,
   pkgs,
   ...
 }: {
@@ -13,6 +14,7 @@
   nix.settings = {
     experimental-features = "nix-command flakes repl-flake";
     builders-use-substitutes = true;
+    trusted-users = ["root" "ovy"];
   };
 
   nix.buildMachines = [
@@ -28,7 +30,7 @@
   ];
 
   # nix-darwin
-  system.configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
+  system.configurationRevision = self.rev or self.dirtyRev or null;
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = 4;
@@ -47,19 +49,6 @@
   fonts.fontDir.enable = true;
   fonts.fonts = with pkgs; [
     inter
-    # (iosevka.override {
-    #   set = "custom";
-    #   privateBuildPlan = import ../fonts/iosevka.nix {
-    #     family = "Iosevka Custom";
-    #     spacing = "normal";
-    #   };
-    # })
-    # (iosevka.override {
-    #   set = "term";
-    #   privateBuildPlan = import ../fonts/iosevka.nix {
-    #     family = "Iosevka Term";
-    #     spacing = "term";
-    #   };
-    # })
+    iosevka-solai.packages.aarch64-darwin.default
   ];
 }
