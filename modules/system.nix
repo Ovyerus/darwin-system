@@ -8,12 +8,17 @@
 
   # Nix setup
   services.nix-daemon.enable = true;
-  nix.package = pkgs.nix;
   nix.distributedBuilds = true;
 
+  nix.gc = {
+    automatic = true;
+    options = "--delete-older-than 7d";
+  };
+
   nix.settings = {
-    experimental-features = "nix-command flakes repl-flake";
+    auto-optimise-store = true;
     builders-use-substitutes = true;
+    experimental-features = "nix-command flakes repl-flake";
     trusted-users = ["root" "ovy"];
   };
 
@@ -25,7 +30,6 @@
       speedFactor = 2;
       maxJobs = 6;
       protocol = "ssh-ng";
-      # publicHostKey = "";
     }
   ];
 
@@ -34,6 +38,11 @@
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = 4;
+
+  system.defaults.NSGlobalDomain.AppleShowAllExtensions = true;
+  system.defaults.finder.ShowPathbar = true;
+  system.defaults.menuExtraClock.Show24Hour = true;
+  system.defaults.trackpad.Dragging = true;
 
   # Dock settings
   system.defaults.dock = {
