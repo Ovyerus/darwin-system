@@ -2,7 +2,7 @@
 
 [nix-darwin](https://github.com/LnL7/nix-darwin) configuration for my MacBooks,
 managing things like Homebrew apps, core CLI packages, and other system
-configureation. Feel free to pick it apart and adapt for your own system.
+configuration. Feel free to pick it apart and adapt for your own system.
 
 For more configuration, check out my
 [dotfiles](https://github.com/Ovyerus/dotfiles).
