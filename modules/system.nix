@@ -1,6 +1,7 @@
 {
   self,
   iosevka-solai,
+  nixpkgs,
   pkgs,
   ...
 }: {
@@ -9,10 +10,12 @@
   # Nix setup
   services.nix-daemon.enable = true;
   nix.distributedBuilds = true;
+  nix.nixPath = ["nixpkgs=${nixpkgs}"];
 
   nix.gc = {
     automatic = true;
     options = "--delete-older-than 7d";
+    interval.Weekday = 6;
   };
 
   nix.settings = {
