@@ -15,6 +15,7 @@
     "discord"
     "figma"
     "httpie"
+    "insomnia"
     "iterm2"
     "karabiner-elements"
     "maccy"
