@@ -5,7 +5,7 @@
   ...
 }: {
   environment.systemPackages = with pkgs; [
-    ffmpeg
+    ffmpeg_6-full
     git
     iterm2
     nixd

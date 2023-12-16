@@ -42,8 +42,9 @@
       yabai -m rule --add title="Karabiner"             manage=off
       yabai -m rule --add title="^Weather$"             manage=off
       yabai -m rule --add title="Yubico Authenticator"  manage=off
-      yabai -m rule --add title="Rewind"                manage=off
-      yabai -m rule --add title="eqMac"                manage=off
+      yabai -m rule --add app="Rewind"                  manage=off
+      yabai -m rule --add app="eqMac"                   manage=off
+      yabai -m rule --add app="^Arc$"                   manage=off
     '';
   };
 
