@@ -45,6 +45,8 @@
       yabai -m rule --add app="Rewind"                  manage=off
       yabai -m rule --add app="eqMac"                   manage=off
       yabai -m rule --add app="^Arc$"                   manage=off
+      yabai -m rule --add app="OBS"                     manage=off
+      yabai -m rule --add app="Raycast"                 manage=off
     '';
   };
 

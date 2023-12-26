@@ -19,8 +19,9 @@
     "iterm2"
     "karabiner-elements"
     "maccy"
-    "obsidian"
     "orbstack"
+    # Actually searches symlinks for apps, compared to Alfred.
+    "raycast"
     "visual-studio-code"
   ];
 

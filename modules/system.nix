@@ -1,11 +1,16 @@
 {
   self,
+  config,
   iosevka-solai,
+  lib,
   nixpkgs,
   pkgs,
   ...
 }: {
-  nixpkgs.hostPlatform = "aarch64-darwin";
+  nixpkgs = {
+    hostPlatform = "aarch64-darwin";
+    config.allowUnfree = true;
+  };
 
   # Nix setup
   services.nix-daemon.enable = true;
@@ -63,4 +68,6 @@
     inter
     iosevka-solai.packages.aarch64-darwin.default
   ];
+
+  # https://github.com/LnL7/nix-darwin/issues/214
 }
