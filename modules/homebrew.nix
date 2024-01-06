@@ -2,6 +2,7 @@
   homebrew.enable = true;
 
   homebrew.taps = [
+    "homebrew/cask-versions"
     "jotaen/klog"
     "ovyerus/tap"
   ];
@@ -16,7 +17,7 @@
     "figma"
     "httpie"
     "insomnia"
-    "iterm2"
+    "iterm2-beta"
     "karabiner-elements"
     "maccy"
     "orbstack"

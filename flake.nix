@@ -11,7 +11,6 @@
 
     iosevka-solai = {
       url = "github:Ovyerus/iosevka-solai";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
