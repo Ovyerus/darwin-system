@@ -39,6 +39,14 @@
       maxJobs = 6;
       protocol = "ssh-ng";
     }
+    {
+      hostName = "skyline.axolotl-map.ts.net";
+      sshUser = "colmena-deploy";
+      system = "aarch64-linux";
+      speedFactor = 1;
+      maxJobs = 2;
+      protocol = "ssh-ng";
+    }
   ];
 
   # nix-darwin
