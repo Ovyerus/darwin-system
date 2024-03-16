@@ -8,7 +8,7 @@
     bitwarden-cli
     ffmpeg_6-full
     git
-    nixd
+    nil
     obsidian
     openssh
     wget
