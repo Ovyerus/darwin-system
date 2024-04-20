@@ -1,9 +1,9 @@
-{pkgs, ...}: {
+{...}: {
   homebrew.enable = true;
 
   homebrew.taps = [
     "homebrew/cask-versions"
-    "jotaen/klog"
+    "ovyerus/klog"
     "ovyerus/tap"
   ];
 
